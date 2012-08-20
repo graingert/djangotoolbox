@@ -207,7 +207,7 @@ class SetField(AbstractIterableField):
         Custom method for serialization, as JSON doesn't support
         serializing sets.
         """
-        return list(self._get_val_from_obj(obj))
+        return dict.fromkeys(self._get_val_from_obj(obj))
 
 
 class DictField(AbstractIterableField):
